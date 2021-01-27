@@ -55,7 +55,7 @@ std::vector<double> FinderNumberPartitionsNumberIntoAddendum::generateFullVecVal
 	uint64_t halfN = valuesCount_.size();
 	std::vector<double> values(n, 0);
 
-	std::transform(TRY_PARALLELIZE_PAR_UNSEQ valuesCount_.cbegin(), valuesCount_.cbegin() + halfN, values.begin(), [this](uint64_t value) {return value; });
+	std::transform(TRY_PARALLELIZE_PAR_UNSEQ valuesCount_.cbegin(), valuesCount_.cbegin() + halfN, values.begin(), [this](const uint64_t& value) {return value; });
 
 	for (uint64_t i = halfN; i < n; i++)
 	{
